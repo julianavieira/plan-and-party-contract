@@ -1,5 +1,4 @@
-import { Plan, optionals, PaymentMethod } from "@/data/plans";
-import type { PaymentMethod as PM } from "@/data/plans";
+import { Plan, optionals } from "@/data/plans";
 
 // re-export not needed; use from store
 export interface PriceBreakdown {
