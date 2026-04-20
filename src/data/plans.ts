@@ -52,30 +52,10 @@ export const plans: Plan[] = [
     ],
   },
   {
-    id: "diamante",
-    name: "Diamante",
-    subtitle: "Compacto + Teaser",
-    category: "foto-video",
-    professionals: 2,
-    hourExtra: 400,
-    priceCard: 2300,
-    features: [
-      "2 profissionais",
-      "4 horas de cobertura",
-      "Vídeo compacto de 15 a 20 min",
-      "Teaser de aproximadamente 2 min",
-      "1 vídeo vertical de até 1 min",
-      "Opção de gravar depoimento (avisar antes)",
-      "Entrega digital (link por e-mail)",
-    ],
-  },
-
-  // ===== FOTO =====
-  {
     id: "infantil-3",
     name: "Plano 3",
     subtitle: "Foto + Reels",
-    category: "foto",
+    category: "foto-video",
     professionals: 1,
     hourExtra: 400,
     priceCard: 1780,
@@ -89,6 +69,8 @@ export const plans: Plan[] = [
       "Entrega digital (link por e-mail)",
     ],
   },
+
+  // ===== FOTO =====
   {
     id: "ouro-foto",
     name: "Pacote Ouro",
@@ -123,6 +105,24 @@ export const plans: Plan[] = [
   },
 
   // ===== VÍDEO =====
+  {
+    id: "diamante",
+    name: "Diamante",
+    subtitle: "Compacto + Teaser",
+    category: "video",
+    professionals: 2,
+    hourExtra: 400,
+    priceCard: 2300,
+    features: [
+      "2 profissionais",
+      "4 horas de cobertura",
+      "Vídeo compacto de 15 a 20 min",
+      "Teaser de aproximadamente 2 min",
+      "1 vídeo vertical de até 1 min",
+      "Opção de gravar depoimento (avisar antes)",
+      "Entrega digital (link por e-mail)",
+    ],
+  },
   {
     id: "ouro-video",
     name: "Ouro",
