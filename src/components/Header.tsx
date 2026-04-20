@@ -1,0 +1,23 @@
+import { Logo } from "./Logo";
+
+export const Header = () => (
+  <header className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-30">
+    <div className="container flex items-center justify-between py-4">
+      <div className="flex items-center gap-3">
+        <Logo className="h-12 w-12 object-contain" />
+        <div className="hidden sm:block">
+          <h1 className="font-brand text-2xl text-secondary leading-none">Trevo Filmes</h1>
+          <p className="text-xs text-muted-foreground">Contrato online</p>
+        </div>
+      </div>
+      <a
+        href="https://wa.me/5521000000000"
+        target="_blank"
+        rel="noreferrer"
+        className="text-sm text-muted-foreground hover:text-primary transition-smooth"
+      >
+        Precisa de ajuda?
+      </a>
+    </div>
+  </header>
+);
