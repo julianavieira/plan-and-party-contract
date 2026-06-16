@@ -11,7 +11,7 @@ export const Header = () => (
         </div>
       </div>
       <a
-        href="https://wa.me/5521000000000"
+        href="https://wa.me/5521993363808"
         target="_blank"
         rel="noreferrer"
         className="text-sm text-muted-foreground hover:text-primary transition-smooth"
