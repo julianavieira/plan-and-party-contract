@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat+Brush&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -83,5 +83,11 @@
   h1, h2, h3, .font-brand {
     font-family: 'Caveat Brush', cursive;
     letter-spacing: 0.02em;
+  }
+
+  .font-bastao {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 }
