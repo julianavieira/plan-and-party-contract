@@ -20,7 +20,7 @@ const Index = () => {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-4">
             <Sparkles className="w-4 h-4" /> Contrato online em poucos cliques
           </div>
-          <h1 className="font-brand text-5xl md:text-7xl text-secondary mb-4">
+          <h1 className="font-bastao text-5xl md:text-7xl text-secondary mb-4">
             Vamos eternizar a sua festa?
           </h1>
           <p className="text-lg text-muted-foreground">
