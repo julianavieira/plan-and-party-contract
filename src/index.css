@@ -84,4 +84,10 @@
     font-family: 'Caveat Brush', cursive;
     letter-spacing: 0.02em;
   }
+
+  .font-bastao {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
 }
