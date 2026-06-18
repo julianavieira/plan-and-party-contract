@@ -137,9 +137,9 @@ A CONTRATADA detém os direitos autorais sobre todo o material produzido, confor
 
 O CONTRATANTE:
 
-( ___ ) autoriza
+( ${data.usoImagem === "autoriza" ? "X" : "___"} ) autoriza
 
-( ___ ) não autoriza
+( ${data.usoImagem === "nao-autoriza" ? "X" : "___"} ) não autoriza
 
 a utilização das imagens para divulgação institucional da CONTRATADA em portfólio, site, redes sociais e materiais promocionais.
 
@@ -335,9 +335,9 @@ A CONTRATADA detém os direitos autorais sobre todo o material produzido, confor
 
 O CONTRATANTE:
 
-( ___ ) autoriza
+( ${data.usoImagem === "autoriza" ? "X" : "___"} ) autoriza
 
-( ___ ) não autoriza
+( ${data.usoImagem === "nao-autoriza" ? "X" : "___"} ) não autoriza
 
 a utilização das imagens para divulgação institucional da CONTRATADA em portfólio, site, redes sociais e materiais promocionais.
 
