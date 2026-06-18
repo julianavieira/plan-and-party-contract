@@ -26,6 +26,10 @@ export interface ContractData {
   // Aniversariante
   nomeAniversariante: string;
   idadeAniversariante: string;
+
+  // Autorizações
+  usoImagem: "autoriza" | "nao-autoriza" | "";
+  liEConcordo: boolean;
 }
 
 interface ContractStore extends ContractData {
