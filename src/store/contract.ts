@@ -55,6 +55,8 @@ const initial: ContractData = {
   horarioFim: "",
   nomeAniversariante: "",
   idadeAniversariante: "",
+  usoImagem: "",
+  liEConcordo: false,
 };
 
 export const useContract = create<ContractStore>((set) => ({
