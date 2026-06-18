@@ -26,6 +26,10 @@ export interface ContractData {
   // Aniversariante
   nomeAniversariante: string;
   idadeAniversariante: string;
+
+  // Autorizações
+  usoImagem: "autoriza" | "nao-autoriza" | "";
+  liEConcordo: boolean;
 }
 
 interface ContractStore extends ContractData {
@@ -51,6 +55,8 @@ const initial: ContractData = {
   horarioFim: "",
   nomeAniversariante: "",
   idadeAniversariante: "",
+  usoImagem: "",
+  liEConcordo: false,
 };
 
 export const useContract = create<ContractStore>((set) => ({

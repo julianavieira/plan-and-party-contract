@@ -50,6 +50,14 @@ const Details = () => {
       toast.error("E-mail inválido");
       return;
     }
+    if (!state.usoImagem) {
+      toast.error("Selecione uma opção de uso de imagem");
+      return;
+    }
+    if (!state.liEConcordo) {
+      toast.error("Você precisa concordar com as cláusulas do contrato");
+      return;
+    }
     navigate("/pagamento");
   };
 
@@ -136,6 +144,51 @@ const Details = () => {
                   <Input value={state.idadeAniversariante} onChange={(e) => update({ idadeAniversariante: e.target.value })} />
                 </div>
               </div>
+            </Card>
+
+            {/* Autorizações */}
+            <Card className="p-6 shadow-card">
+              <h3 className="font-brand text-2xl text-secondary mb-4">Direito de uso de imagem</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Disposições gerais e autorização de uso de imagem:
+              </p>
+              <div className="space-y-3 mb-4">
+                <label className="flex items-center gap-3 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="usoImagem"
+                    value="autoriza"
+                    checked={state.usoImagem === "autoriza"}
+                    onChange={(e) => update({ usoImagem: e.target.value as "autoriza" | "nao-autoriza" })}
+                    className="w-4 h-4 accent-primary"
+                  />
+                  <span className="text-sm">autorizo</span>
+                </label>
+                <label className="flex items-center gap-3 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="usoImagem"
+                    value="nao-autoriza"
+                    checked={state.usoImagem === "nao-autoriza"}
+                    onChange={(e) => update({ usoImagem: e.target.value as "autoriza" | "nao-autoriza" })}
+                    className="w-4 h-4 accent-primary"
+                  />
+                  <span className="text-sm">não autorizo</span>
+                </label>
+                <p className="text-sm text-muted-foreground">
+                  a utilização de sua imagem pela CONTRATADA em seu portfólio (site e instagram) exclusivamente para fins de divulgação de seu trabalho.
+                </p>
+              </div>
+              <label className="flex items-start gap-3 cursor-pointer border-t border-border pt-4">
+                <Checkbox
+                  checked={state.liEConcordo}
+                  onCheckedChange={(checked) => update({ liEConcordo: checked === true })}
+                  className="mt-0.5"
+                />
+                <span className="text-sm leading-relaxed">
+                  Li e estou ciente e de acordo com todas as cláusulas desse contrato. Este é um contrato de adesão após o pagamento atesta meu acordo.
+                </span>
+              </label>
             </Card>
 
             {/* Horas extras + opcionais */}
