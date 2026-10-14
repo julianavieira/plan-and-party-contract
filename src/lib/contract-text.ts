@@ -1,6 +1,7 @@
 import { ContractData } from "@/store/contract";
 import { PriceBreakdown } from "./pricing";
 import { formatBRL } from "@/data/plans";
+import { formatDateBR } from "./utils";
 
 export function generateContractText(data: ContractData, price: PriceBreakdown): string {
   if (data.plan!.category === "video") {
@@ -32,7 +33,7 @@ Endereço: ${data.endereco}
 
 INFORMAÇÕES DO EVENTO
 Local / Endereço: ${data.localEvento}
-Data: ${new Date(data.dataEvento).toLocaleDateString("pt-BR")}
+Data: ${formatDateBR(data.dataEvento)}
 Horário: das ${data.horarioInicio} às ${data.horarioFim}
 
 ANIVERSARIANTE
@@ -205,7 +206,7 @@ Endereço: ${data.endereco}
 
 INFORMAÇÕES DO EVENTO
 Local / Endereço: ${data.localEvento}
-Data: ${new Date(data.dataEvento).toLocaleDateString("pt-BR")}
+Data: ${formatDateBR(data.dataEvento)}
 Horário: das ${data.horarioInicio} às ${data.horarioFim}
 
 ANIVERSARIANTE
