@@ -26,14 +26,14 @@ const baseData = (planId: string, dataEvento: string): ContractData => ({
 
 describe("event date in the generated contract", () => {
   it("shows the photo contract date exactly as typed (10/08/2026)", () => {
-    const data = baseData("foto-ouro", "2026-08-10");
+    const data = baseData("ouro-foto", "2026-08-10");
     const text = generateContractText(data, calcPrice(data.plan!, 0, [], "pix-2x"));
     expect(text).toContain("Data: 10/08/2026");
     expect(text).not.toContain("09/08/2026");
   });
 
   it("shows the video contract date exactly as typed (10/08/2026)", () => {
-    const data = baseData("video-ouro", "2026-08-10");
+    const data = baseData("ouro-video", "2026-08-10");
     const text = generateContractText(data, calcPrice(data.plan!, 0, [], "pix-2x"));
     expect(text).toContain("Data: 10/08/2026");
     expect(text).not.toContain("09/08/2026");
