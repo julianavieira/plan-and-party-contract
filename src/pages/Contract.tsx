@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Stepper } from "@/components/Stepper";
@@ -32,6 +32,38 @@ const Contract = () => {
     () => (state.plan && price ? generateContractText(state, price) : ""),
     [state, price]
   );
+
+  const ownerNotified = useRef(false);
+  useEffect(() => {
+    if (!state.plan || !price || !text || ownerNotified.current) return;
+    const key = `owner-notified:${state.nomeContratante}|${state.email}|${state.dataEvento}|${state.plan.id}|${price.total}`;
+    if (sessionStorage.getItem(key)) {
+      ownerNotified.current = true;
+      return;
+    }
+    ownerNotified.current = true;
+    (async () => {
+      try {
+        const blob = await generateContractPDF(text);
+        const pdfBase64 = await blobToBase64(blob);
+        const { error } = await supabase.functions.invoke("send-contract", {
+          body: {
+            recipientEmail: state.email,
+            recipientName: state.nomeContratante,
+            pdfBase64,
+            eventDate: state.dataEvento,
+            planName: `${state.plan!.name} — ${state.plan!.subtitle}`,
+            total: price.total,
+            notifyOwner: true,
+          },
+        });
+        if (error) throw error;
+        sessionStorage.setItem(key, "1");
+      } catch (e) {
+        console.error("Falha ao notificar a Trevo:", e);
+      }
+    })();
+  }, [state, price, text]);
 
   if (!state.plan || !price) return null;
 
